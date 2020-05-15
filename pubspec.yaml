@@ -13,7 +13,6 @@ dependencies:
   uuid: ^2.0.4
   intl: ">=0.15.0 <1.0.0"
   quiver: ^2.0.5
-  camera: ^0.5.7+4
   path_provider: ^1.6.5
   after_layout: ^1.0.7+2
   flutter_masked_text: ^0.8.0
