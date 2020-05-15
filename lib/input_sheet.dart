@@ -1,15 +1,10 @@
 library input_sheet;
 
-import 'dart:io';
-import 'dart:typed_data';
 
-import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart';
 import 'package:input_sheet/inputs/IpsInputDatetime.dart';
 import 'package:input_sheet/inputs/IpsInputTime.dart';
-import 'package:input_sheet/utils/IpsMediaType.dart';
-import 'package:input_sheet/utils/IpsModeCamera.dart';
 
 import 'inputs/IpsInputDate.dart';
 import 'inputs/IpsInputLongtext.dart';
