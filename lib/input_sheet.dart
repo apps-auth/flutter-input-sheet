@@ -6,12 +6,10 @@ import 'dart:typed_data';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart';
-import 'package:input_sheet/inputs/IpsInputCamera.dart';
 import 'package:input_sheet/inputs/IpsInputDatetime.dart';
 import 'package:input_sheet/inputs/IpsInputTime.dart';
 import 'package:input_sheet/utils/IpsMediaType.dart';
 import 'package:input_sheet/utils/IpsModeCamera.dart';
-import 'package:video_compress/video_compress.dart';
 
 import 'inputs/IpsInputDate.dart';
 import 'inputs/IpsInputLongtext.dart';
@@ -228,77 +226,6 @@ class InputSheet {
     );
   }
 
-  photo({
-    File file,
-    String url,
-    double height,
-    ResolutionPreset resolution = ResolutionPreset.high,
-    String labelInitializingCamera = "Camera is not initialized yet",
-    String labelNoCameraAvailable = "There is no camera available on this device",
-    @required Function(File, Uint8List) onDone,
-  }) {
-    Sheet(
-      this._context,
-      null,
-      this.cancelText,
-      this.doneText,
-      paddingVertical: 0,
-      showDoneButton: false,
-    ).open(
-      new IpsInputCamera(
-        onDone,
-        IpsMediaType.PHOTO,
-        IpsModeCamera.BACK,
-        MediaQuery.of(_context).padding.top,
-        url: url,
-        file: file,
-        height: height,
-        resolution: resolution,
-        labelInitializingCamera: labelInitializingCamera,
-        labelNoCameraAvailable: labelNoCameraAvailable,
-      ),
-    );
-  }
-
-  video({
-    File file,
-    String url,
-    double height,
-    VideoQuality compress,
-    int timeRecordLimit = 60,
-    String sufixRecordTimeout = "Sec",
-    String labelCompressing = "Compressing...",
-    ResolutionPreset resolution = ResolutionPreset.high,
-    String labelInitializingCamera = "Camera is not initialized yet",
-    String labelNoCameraAvailable = "There is no camera available on this device",
-    @required Function(File, Uint8List) onDone,
-  }) {
-    Sheet(
-      this._context,
-      null,
-      this.cancelText,
-      this.doneText,
-      paddingVertical: 0,
-      showDoneButton: false,
-    ).open(
-      new IpsInputCamera(
-        onDone,
-        IpsMediaType.VIDEO,
-        IpsModeCamera.BACK,
-        MediaQuery.of(_context).padding.top,
-        url: url,
-        file: file,
-        height: height,
-        compress: compress,
-        resolution: resolution,
-        timeRecordLimit: timeRecordLimit,
-        sufixRecordTimeout: sufixRecordTimeout,
-        labelCompressing: labelCompressing,
-        labelInitializingCamera: labelInitializingCamera,
-        labelNoCameraAvailable: labelNoCameraAvailable,
-      ),
-    );
-  }
 
   //TO-DO
   //slider() {}
