@@ -33,11 +33,15 @@ class Sheet {
           topRight: Radius.circular(10),
         ),
       ),
+      enableDrag: true,
+      isDismissible: true,
+      useRootNavigator: true,
       builder: (BuildContext context) {
-        return SingleChildScrollView(
-          child: Container(
-            padding: EdgeInsets.only(
-                bottom: MediaQuery.of(context).viewInsets.bottom),
+        return Scaffold(
+          // use CupertinoPageScaffold for iOS
+          backgroundColor: Colors.transparent,
+          resizeToAvoidBottomInset: true, // important
+          body: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
