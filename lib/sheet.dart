@@ -145,11 +145,6 @@ class Sheet {
                     ],
                   ),
                 ),
-                SizedBox(
-                  height: MediaQuery.of(_context).viewInsets.bottom != 0
-                      ? MediaQuery.of(_context).viewInsets.bottom
-                      : 0,
-                ),
               ],
             ),
           ),
