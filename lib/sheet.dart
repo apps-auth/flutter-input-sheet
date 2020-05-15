@@ -33,17 +33,13 @@ class Sheet {
           topRight: Radius.circular(10),
         ),
       ),
-      enableDrag: true,
-      isDismissible: true,
-      useRootNavigator: true,
       builder: (BuildContext context) {
-        return Scaffold(
-          // use CupertinoPageScaffold for iOS
-          backgroundColor: Colors.transparent,
-          resizeToAvoidBottomInset: true, // important
-          body: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
+        return AnimatedPadding(
+          padding: MediaQuery.of(context).viewInsets,
+          duration: const Duration(milliseconds: 100),
+          curve: Curves.decelerate,
+          child: Container(
+            child: Wrap(
               children: <Widget>[
                 Container(
                   padding: EdgeInsets.all(0),
@@ -149,6 +145,11 @@ class Sheet {
                     ],
                   ),
                 ),
+                // SizedBox(
+                //   height: MediaQuery.of(_context).viewInsets.bottom != 0
+                //       ? MediaQuery.of(_context).viewInsets.bottom
+                //       : 0,
+                // ),
               ],
             ),
           ),
